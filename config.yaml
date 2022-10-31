@@ -1,0 +1,7 @@
+interfaces:
+  udp:
+    port: 5566
+  mqtt:
+    host: 'localhost'
+    schema: 'v1'
+mediaDirectory: './media'
