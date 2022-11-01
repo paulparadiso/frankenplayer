@@ -16,7 +16,7 @@
     let videoPlayer;
 
     window.onload = async () => {
-      videoPlayer = new Player('#main-video', {'autoplay': true, 'loop': true}, "./videos/TESTCARD_60p_1920x1080_h264.mp4");
+      videoPlayer = new Player('#main-video', {'autoplay': true, 'loop': true}, "/var/snap/frankenplayer/videos/TESTCARD_60p_1920x1080_h264.mp4");
       videoPlayer.setVolume(0.0);
       setInterval(() => {
         let currentTime = videoPlayer.getCurrentTime();
