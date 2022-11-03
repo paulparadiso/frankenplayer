@@ -36,7 +36,8 @@ const createWindow = async () => {
             nodeIntegration: true,
             contextIsolation: true,
             preload: path.join(__dirname, 'preload.js')
-        }
+        },
+        fullscreen: true
     });
 
     ipcMain.on('current-time', (event, time) => {
@@ -45,7 +46,7 @@ const createWindow = async () => {
 
     await win.loadFile('index.html');
 
-    win.webContents.send('loadContent', 'video1.mpv');
+    //win.webContents.send('loadContent', 'video1.mpv');
     //win.webContents.send('command', 'hello');
 
     //setTimeout(() => win.webContents.send('command', 'pause'), 2000);
