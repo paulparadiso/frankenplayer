@@ -46,7 +46,7 @@ const createWindow = async () => {
 
     await win.loadFile('index.html');
 
-    const mediaUrl = process.env.MEDIA_URL;
+    const mediaUrl = process.env.media.url;
 
     win.webContents.send('loadContent', mediaUrl);
     //win.webContents.send('command', 'hello');
