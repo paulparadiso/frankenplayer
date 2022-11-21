@@ -46,7 +46,9 @@ const createWindow = async () => {
 
     await win.loadFile('index.html');
 
-    //win.webContents.send('loadContent', 'video1.mpv');
+    const mediaUrl = process.env.MEDIA_URL;
+
+    win.webContents.send('loadContent', mediaUrl);
     //win.webContents.send('command', 'hello');
 
     //setTimeout(() => win.webContents.send('command', 'pause'), 2000);

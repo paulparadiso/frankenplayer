@@ -5,7 +5,7 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <title>Frankenplayer</title>
   </head>
-  <body>
+  <body style="overflow:hidden;">
     <div class="main">
       <video id="main-video" class="video-js" style="width:100%;height:100%;"></video>
     </div>
@@ -16,7 +16,7 @@
     let videoPlayer;
 
     window.onload = async () => {
-      videoPlayer = new Player('#main-video', {'autoplay': true, 'loop': true}, "/var/snap/frankenplayer/common/videos/TESTCARD_1080_30p.mov");
+      videoPlayer = new Player('#main-video', {'autoplay': true, 'loop': true});
       videoPlayer.setVolume(0.0);
       setInterval(() => {
         let currentTime = videoPlayer.getCurrentTime();
@@ -25,14 +25,14 @@
     }
 
     const loadContent = (c) => {
-      console.log(c);
+      videoPlayer.setSrc(c);
     }
 
     const processCommand = (m) => {
       switch(m) {
         case 'play': 
           videoPlayer.play();
-          break;
+          break;  
         case 'pause':
           videoPlayer.pause();
           break;

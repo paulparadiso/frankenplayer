@@ -19,8 +19,8 @@ class Player {
         }
     }
 
-    setSrc() {  
-
+    setSrc(src) {  
+        this.mediaObject.src = src;
     }
 
     play() {
