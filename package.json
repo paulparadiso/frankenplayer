@@ -7,7 +7,7 @@
     "electron": "^21.0.1"
   },
   "scripts": {
-    "start": "electron .",
+    "start": "export MEDIA_URL=\"ketchup\" && electron .",
     "start-uc": "electron . --ozone-platform=wayland --disable-dev-shm-usage"
   },
   "dependencies": {

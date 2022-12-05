@@ -46,9 +46,10 @@ const createWindow = async () => {
 
     await win.loadFile('index.html');
 
-    const mediaUrl = process.env.media;
+    const mediaUrl = process.env.MEDIA_URL;
 
-    win.webContents.send('loadContent', mediaUrl);
+    //win.webContents.send('loadContent', mediaUrl);
+    win.webContents.send('loadContent', '/var/snap/frankenplayer/common/videos/TESTCARD_1080_30p.mp4');
     //win.webContents.send('command', 'hello');
 
     //setTimeout(() => win.webContents.send('command', 'pause'), 2000);

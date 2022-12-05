@@ -7,17 +7,20 @@
   </head>
   <body style="overflow:hidden;">
     <div class="main">
-      <video id="main-video" class="video-js" style="width:100%;height:100%;"></video>
+      <video id="main-video" class="video-js" style="width:50%;height:100%;"></video>
+      <video id="second-video" class="video-js" style="width:50%;height:100%;"></video>
     </div>
   </body>
   <script src="./MediaPlayer.js"></script>
   <script>
 
-    let videoPlayer;
+    let videoPlayer, secondPlayer;
 
     window.onload = async () => {
       videoPlayer = new Player('#main-video', {'autoplay': true, 'loop': true});
       videoPlayer.setVolume(0.0);
+      secondPlayer = new Player('#main-video', {'autoplay': true, 'loop': true});
+      secondPlayer.setVolume(0.0);
       setInterval(() => {
         let currentTime = videoPlayer.getCurrentTime();
         window.bridge.setCurrentTime(currentTime);
@@ -27,6 +30,7 @@
     const loadContent = (c) => {
       console.log(c);
       videoPlayer.setSrc(c);
+      secondPlayer.setSrc(c);
     }
 
     const processCommand = (m) => {
