@@ -17,9 +17,9 @@
     let videoPlayer, secondPlayer;
 
     window.onload = async () => {
-      videoPlayer = new Player('#main-video', {'autoplay': true, 'loop': true});
+      videoPlayer = new Player('#main-video', {'autoplay': true, 'loop': true}, '/var/snap/frankenplayer/common/videos/TESTCARD_1080_30p.mp4');
       videoPlayer.setVolume(0.0);
-      secondPlayer = new Player('#main-video', {'autoplay': true, 'loop': true});
+      secondPlayer = new Player('#main-video', {'autoplay': true, 'loop': true}, '/var/snap/frankenplayer/common/videos/waves.mp4');
       secondPlayer.setVolume(0.0);
       setInterval(() => {
         let currentTime = videoPlayer.getCurrentTime();
